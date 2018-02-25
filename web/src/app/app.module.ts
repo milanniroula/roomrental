@@ -5,15 +5,16 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { AppComponent } from './app.component';
 
 import {ButtonModule} from 'primeng/button';
+import { TopMenuComponent } from './top-menu/top-menu.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    TopMenuComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent]

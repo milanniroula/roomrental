@@ -1,0 +1,36 @@
+@import '~sass/variables';
+@import '~sass/mixins';
+.top-menu-bar {
+    margin: 0px;
+    padding: 0px 10px 0px 10px;
+    position: relative;
+    background-color: map-get($colors, light);
+}
+
+.logo {
+    height: 50px;
+    width: 70px;
+    background-image: url('~/assets/nepali_roommate_logo.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.top-menu {
+    position: absolute;
+    right: 10px;
+    bottom: 10px;
+    margin: 0px;
+    padding: 0px;
+    vertical-align: bottom;
+    .top-menu-item {
+        list-style-type: none;
+        display: inline-block;
+        margin: 0px 10px;
+        font-weight: 700;
+        color: map-get($colors, accent);
+        font-size: 12px;
+        letter-spacing: 0.8px;
+        cursor: pointer;
+    }
+}
