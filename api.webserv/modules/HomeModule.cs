@@ -1,4 +1,5 @@
 ﻿using Nancy;
+using NLog;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,9 +9,9 @@ namespace api.webserv.modules
 {
     public class HomeModule : NancyModule
     {
-        public HomeModule()
+        public HomeModule(ILogger logger)
         {
-            System.Diagnostics.Debug.WriteLine("Its to debug a system");
+            logger.Debug("Its module");
             Get["/"] = p => "Hello from plural sight";
 
         }
