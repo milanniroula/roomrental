@@ -6,5 +6,11 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app';
+
+  public displayLogin: boolean = false;
+
+
+  openLoginDialog() {
+    this.displayLogin = true;
+  }
 }

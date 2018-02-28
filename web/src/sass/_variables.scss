@@ -1,4 +1,12 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);
-$font-stack:'Lato',
-sans-serif;
-$colors:( accent:#4C4F9C, light:#EDEDED)
+
+@font-face {
+    font-family: 'Debby';
+    src: url('~/assets/fonts/Debby.ttf') format('truetype');
+    src: url('~/assets/fonts/Debby.otf') format('otf');
+    src: url('~/assets/fonts/Debby.woff') format('woff')
+}
+$font-lato:'Lato';
+$font-debby:'Debby';
+$colors:( primary:#0059A4, accent:#002665, red:#AC1523, lightDark:#EDEDED, light:#FFFFFF);
+

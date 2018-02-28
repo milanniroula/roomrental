@@ -16,4 +16,5 @@ D:\projects\roomrental\api.webserv\bin\NLog.xml
 D:\projects\roomrental\api.webserv\obj\Debug\api.websrv.csproj.CoreCompileInputs.cache
 D:\projects\roomrental\api.webserv\obj\Debug\api.webserv.dll
 D:\projects\roomrental\api.webserv\obj\Debug\api.webserv.pdb
-D:\projects\roomrental\api.webserv\obj\Debug\api.websrv.csprojResolveAssemblyReference.cache
+D:\projects\roomrental\api.webserv\bin\Nancy.Authentication.Stateless.dll
+D:\projects\roomrental\api.webserv\bin\Nancy.Authentication.Stateless.xml

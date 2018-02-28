@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Subject } from 'rxjs/Subject';
 
 @Component({
   selector: 'top-menu',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopMenuComponent implements OnInit {
 
+  public onLogin: Subject<boolean> = new Subject<boolean>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  onLoginClick() {
+    this.onLogin.next(true);
   }
 
 }
