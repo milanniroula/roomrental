@@ -6,6 +6,22 @@
     font-family: $font-lato;
 }
 
+*:focus {
+    outline: none;
+}
+
 .no-padding {
     padding: 0px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+// components
+.btn {
+    border: 0px !important;
+    height: 30px;
+    font-weight: 11px;
+    font-weight: $font-bold;
 }

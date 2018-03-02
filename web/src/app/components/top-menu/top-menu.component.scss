@@ -1,11 +1,10 @@
 @import '~sass/variables';
 @import '~sass/mixins';
 .top-menu-bar {
-    margin: 0px;
-    padding: 0px 10px 0px 10px;
     position: relative;
     background-color: map-get($colors, accent);
-    height: 40px;
+    height: 50px;
+    padding-left: 15px;
 }
 
 .brand {
@@ -13,21 +12,22 @@
 }
 
 .logo-text {
-    margin-left: 90px;
+    margin-left: 70px;
     display: inline-block;
     color: white;
-    height: 40px;
-    font-weight: 700;
+    height: 50px;
+    font-weight: $font-bold;
     font-family: $font-debby !important;
-    line-height: 40px;
-    font-size: 24px;
-    width:200px;
+    line-height: 50px;
+    font-size: 22px;
+    width: 180px;
     letter-spacing: 1.5px;
+    padding-left: 20px;
 }
 
 .logo-wrapper {
     position: absolute;
-    background-color: map-get($colors, red);
+    background-color: map-get($colors, danger);
     width: 74px;
     height: 44px;
     text-align: center;
@@ -48,24 +48,33 @@
 .top-menu {
     position: absolute;
     right: 10px;
-    bottom: 10px;
+    bottom: 0px;
     margin: 0px;
     padding: 0px;
     vertical-align: bottom;
     .top-menu-item {
         list-style-type: none;
         display: inline-block;
-        margin: 0px 10px;
-        font-weight: 700;
-        color: map-get($colors, light);
+        font-weight: $font-bold;
         font-size: 11px;
         letter-spacing: 0.8px;
-        cursor: pointer;
+        width: 95px;
+        height: 50px;
+        text-align: center;
+        line-height: 50px;
+        a {
+            display: inline-block;
+            text-decoration: none !important;
+            color: map-get($colors, light);
+            width: 100%;
+            line-height: 50px;
+            &:hover {
+                background-color: map-get($colors, primary);
+            }
+        }
     }
     .btn-login {
-        background-color: map-get($colors, red);
+        background-color: map-get($colors, danger);
         color: map-get($colors, light);
-        border: none;
-        height: 25px;
     }
 }

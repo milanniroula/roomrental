@@ -1,12 +1,22 @@
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,700,900);
-
 @font-face {
     font-family: 'Debby';
     src: url('~/assets/fonts/Debby.ttf') format('truetype');
     src: url('~/assets/fonts/Debby.otf') format('otf');
     src: url('~/assets/fonts/Debby.woff') format('woff')
 }
+
+// fonts
 $font-lato:'Lato';
 $font-debby:'Debby';
-$colors:( primary:#0059A4, accent:#002665, red:#AC1523, lightDark:#EDEDED, light:#FFFFFF);
-
+$font-bold:900;
+$font-regular:400;
+$font-light:300;
+// colors
+$colors:( primary:#428BCA,
+accent:#1A407F,
+danger:#ED2939,
+faded:#A0AEC1,
+lightDark:#EDEDED,
+light:#FFFFFF,
+dark:#000000);

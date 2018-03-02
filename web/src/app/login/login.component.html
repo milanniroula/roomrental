@@ -1,0 +1,54 @@
+<p-dialog [(visible)]="displayLogin" modal=true closeOnEscape=false dismissaleMask=false [minHeight]="height" [width]="width"
+  styleClass="login-dialog">
+
+  <p-header>Sign in to your account</p-header>
+
+  <ng-container>
+    <form [formGroup]="loginForm" novalidate>
+      <div class="ui-g">
+        <div class="ui-g-1"></div>
+        <div class="ui-g-10 inputgroup-container">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">
+              <i class="fa fa-envelope"></i>
+            </span>
+            <input type="text" pInputText placeholder="Username">
+          </div>
+        </div>
+        <div class="ui-g-1"></div>
+      </div>
+      <div class="ui-g">
+        <div class="ui-g-1"></div>
+        <div class="ui-g-10 inputgroup-container">
+          <div class="ui-inputgroup">
+            <span class="ui-inputgroup-addon">
+              <i class="fa fa-lock"></i>
+            </span>
+            <input type="password" pInputText placeholder="Password">
+          </div>
+        </div>
+        <div class="ui-g-1"></div>
+      </div>
+    </form>
+    <div class="ui-g">
+      <div class="ui-g-1"></div>
+      <div class="ui-g-10 btn-container">
+        <button pButton type="button" label="Sign In" class="btn btn-login" icon="fa fa-fw fa-arrow-circle-right
+        Unicode:
+        " iconPos="right"></button>
+      </div>
+      <div class="ui-g-1"></div>
+    </div>
+  </ng-container>
+
+  <p-footer>
+    <div class="ui-g">
+      <div class="ui-g-6 text-center">
+        <a href="#">Create an account</a>
+      </div>
+      <div class="ui-g-6 text-center">
+        <a href="">Forgot password</a>
+      </div>
+    </div>
+  </p-footer>
+</p-dialog>
