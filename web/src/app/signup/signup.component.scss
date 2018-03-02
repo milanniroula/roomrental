@@ -1,0 +1,14 @@
+:host /deep/{
+    .signup-panel{
+        .ui-panel-content.ui-widget-content{
+            margin:0 auto;
+            border:1px red solid !important;
+            width:400px;
+        }
+
+        .input-group{
+padding:5px 0px;
+        }
+        
+    }
+}

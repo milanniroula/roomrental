@@ -2,6 +2,9 @@
 
 @import './variables';
 @import './mixins';
+
+// global
+
 * {
     font-family: $font-lato;
 }
@@ -10,6 +13,24 @@
     outline: none;
 }
 
+div.content{
+    padding:10px;
+}
+
+.page-header  {
+    font-weight: 700;
+    font-size: 22px;
+    color: map-get($colors,accent);
+}
+
+.page-subheader{
+    font-weight: 700;
+    font-size: 13px;
+    color: map-get($colors,faded);
+}
+
+
+// utilities
 .no-padding {
     padding: 0px;
 }
@@ -17,6 +38,9 @@
 .text-center {
     text-align: center;
 }
+
+
+
 
 // components
 .btn {
