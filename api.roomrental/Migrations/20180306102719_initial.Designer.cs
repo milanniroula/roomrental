@@ -10,9 +10,9 @@ using System;
 
 namespace api.roomrental.Migrations
 {
-    [DbContext(typeof(RoomRentalDBContext))]
-    [Migration("20180304113930_InitialCreate")]
-    partial class InitialCreate
+    [DbContext(typeof(RoomRentalDbContext))]
+    [Migration("20180306102719_initial")]
+    partial class initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -21,16 +21,28 @@ namespace api.roomrental.Migrations
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("api.roomrental.models.Room", b =>
+            modelBuilder.Entity("api.roomrental.models.Property", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Price");
+                    b.Property<string>("Name");
 
                     b.HasKey("ID");
 
                     b.ToTable("Rooms");
+                });
+
+            modelBuilder.Entity("api.roomrental.models.PropertyType", b =>
+                {
+                    b.Property<int>("ID")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Type");
+
+                    b.HasKey("ID");
+
+                    b.ToTable("PropertyType");
                 });
 #pragma warning restore 612, 618
         }

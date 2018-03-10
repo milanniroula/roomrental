@@ -5,11 +5,12 @@ using System.Threading.Tasks;
 
 namespace api.roomrental.models
 {
-    public class Room
+    public class Property
     {
 
         public int ID { get; set; }
-        public string Price { get; set; }
+        public string Name { get; set; }
+
 
     }
 }

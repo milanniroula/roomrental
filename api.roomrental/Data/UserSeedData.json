@@ -1,0 +1,31 @@
+﻿[
+  {
+    "FirstName": "First Name 1",
+    "LastName": "Last Name 1",
+    "UserName": "firstname1@gmail.com",
+    "Password": "Password123!",
+    "PhoneNumber": "0433371679"
+  },
+  {
+    "FirstName": "First Name 2",
+    "LastName": "Last Name 2",
+    "Password": "Password123!",
+    "UserName": "firstname2@gmail.com",
+    "PhoneNumber": "0433371679"
+  },
+  {
+    "FirstName": "First Name 3",
+    "LastName": "Last Name 3",
+    "UserName": "firstname3@gmail.com",
+    "Password": "Password123!",
+    "PhoneNumber": "0433371679"
+  },
+
+  {
+    "FirstName": "First Name 4",
+    "LastName": "Last Name 4",
+    "UserName": "firstname4@gmail.com",
+    "Password": "Password123!",
+    "PhoneNumber": "0433371679"
+  }
+]

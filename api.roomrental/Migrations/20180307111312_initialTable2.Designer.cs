@@ -12,9 +12,10 @@ using System;
 namespace api.roomrental.Migrations
 {
     [DbContext(typeof(RoomRentalDbContext))]
-    partial class RoomRentalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180307111312_initialTable2")]
+    partial class initialTable2
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -213,9 +214,6 @@ namespace api.roomrental.Migrations
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
-                    b.Property<string>("FirstName");
-
-                    b.Property<string>("LastName");
 
                     b.ToTable("ApplicationUser");
 

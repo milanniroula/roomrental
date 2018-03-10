@@ -12,9 +12,10 @@ using System;
 namespace api.roomrental.Migrations
 {
     [DbContext(typeof(RoomRentalDbContext))]
-    partial class RoomRentalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180310060918_ApplicationUser Prop update")]
+    partial class ApplicationUserPropupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
