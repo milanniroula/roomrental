@@ -1,14 +1,19 @@
-:host /deep/{
-    .signup-panel{
-        .ui-panel-content.ui-widget-content{
-            margin:0 auto;
-            border:1px red solid !important;
-            width:400px;
-        }
-
-        .input-group{
-padding:5px 0px;
+@import '~sass/variables';
+@import '~sass/mixins';
+:host /deep/ {
+    .input-group {
+        padding: 15px 0px;
+        input {
+            height: 40px;
+            border: 1px map-get($colors, faded) solid;
+            width: 100%;
+            &.ng-dirty.ng-invalid{
+                border:1px map-get($colors,danger) solid;
+            }
         }
         
+    }
+    .btn-signup{
+        width:100%;
     }
 }

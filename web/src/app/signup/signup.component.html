@@ -6,35 +6,45 @@
     </div>
   </div>
   <div class="ui-g">
-    <div class="ui-g-3"></div>
-    <div class="ui-g-6">
-      <form action="">
-        <p-panel header="User Account" styleClass="signup-panel">
-          <div class="ui-g input-group">
-            <div class="ui-g-4">
-              <label for="">Email:</label>
-            </div>
-            <div class="ui-g-8">
-              <input type="text" pInputText placeholder="Email address"> </div>
-          </div>
-          <div class="ui-g input-group">
-            <div class="ui-g-4">
-              <label for="">Password:</label>
-            </div>
-            <div class="ui-g-8">
-              <input type="password" pInputText placeholder="Email address"> </div>
-          </div>
-
-          <div class="ui-g input-group">
-            <div class="ui-g-4">
-              <label for="">Confirm password:</label>
-            </div>
-            <div class="ui-g-8">
-              <input type="password" pInputText placeholder="Email address"> </div>
-          </div>
-        </p-panel>
+    <div class="ui-g-4"></div>
+    <div class="ui-g-4">
+      <form #form [formGroup]="userRegistrationForm">
+        <div class="input-group">
+          <span class="ui-float-label">
+            <input type="text" pInputText [(ngModel)]="user.userName" formControlName="userName">
+            <label for="float-input">Email</label>
+          </span>
+          <span *ngIf="userRegistrationForm.controls['userName'].errors.required">Email Required</span>
+        </div>
+        <div class="input-group">
+          <span class="ui-float-label">
+            <input type="text" pInputText [(ngModel)]="user.phoneNumber" formControlName="phoneNumber">
+            <label for="float-input">Phone Number</label>
+          </span>
+        </div>
+        <div class="input-group">
+          <span class="ui-float-label">
+            <input type="password" pInputText [(ngModel)]="user.password" formControlName="password">
+            <label for="float-input">Password</label>
+          </span>
+        </div>
+        <div class="input-group">
+          <span class="ui-float-label">
+            <input type="password" pInputText [(ngModel)]="user.confirmPassword" formControlName="confirmPassword" #confirmPassword>
+            <label for="float-input">Password</label>
+          </span>
+          <span *ngIf="userRegistrationForm.controls['confirmPassword'].errors.mismatch">Email Required</span>
+          <span *ngIf="userRegistrationForm.controls['confirmPassword'].errors.mismatch">Email Required</span>
+        
+        </div>
+        
       </form>
+      <div class="button-container">
+        <div class="ui-g">
+          <button class="btn btn-signup" pButton type="button" label="Sign up" (click)="signup(userRegistrationForm)" icon="fas fa-user-circle"
+            iconPos="right"></button>
+        </div>
 
+      </div>
     </div>
   </div>
-</div>

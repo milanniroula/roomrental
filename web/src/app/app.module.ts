@@ -19,6 +19,7 @@ import { ButtonModule } from 'primeng/button';
 import { DialogModule } from 'primeng/dialog';
 import { SignupComponent } from './signup/signup.component';
 import { PanelModule } from 'primeng/panel';
+import {InputTextModule} from 'primeng/inputtext';
 
 
 
@@ -38,6 +39,7 @@ import { PanelModule } from 'primeng/panel';
     ButtonModule,
     DialogModule,
     PanelModule,
+    InputTextModule,
     RouterModule.forRoot(
       appRoutes // <-- debugging purposes only
     )

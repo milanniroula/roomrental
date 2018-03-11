@@ -28,8 +28,6 @@ namespace api.roomrental.Data
             _context = context;
             _userManager = userManager;
             _roleManager = roleManager;
-            _logger = logger;
-
         }
         public async Task Seed()
         {
