@@ -1,0 +1,7 @@
+{
+    "/srv": {
+      "target": "http://localhost:64300",
+      "secure": false,
+      "pathRewrite": {"^/srv" : ""}
+    }
+  }

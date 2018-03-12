@@ -38,6 +38,7 @@ namespace api.roomrental
 
             services.AddScoped<DbInitializer, DbInitializer>();
             services.AddAutoMapper();
+            services.AddCors();
             services.AddMvc();
         }
 
@@ -51,6 +52,7 @@ namespace api.roomrental
             }
 
             loggerFactory.AddNLog();
+            app.UseCors(options => options.AllowAnyOrigin());
             app.UseMvc();
         }
     }

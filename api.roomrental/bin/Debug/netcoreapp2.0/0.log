@@ -1,0 +1,108 @@
+[2018-03-11 23:15:02.1990][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/   
+[2018-03-11 23:15:02.4939][IRYANBASNET][Info] Request finished in 330.9841ms 404  
+[2018-03-11 23:15:07.7567][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:15:07.9217][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:15:11.4510][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:15:11.5630][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:15:11.8008][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 3864.5059ms 
+[2018-03-11 23:15:11.8259][IRYANBASNET][Info] Request finished in 4067.2576ms 200 application/json; charset=utf-8 
+[2018-03-11 23:15:11.9115][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/favicon.ico   
+[2018-03-11 23:15:11.9472][IRYANBASNET][Info] Request finished in 15.8995ms 404  
+[2018-03-11 23:20:15.6359][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:20:15.6808][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:20:25.9761][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:20:26.0836][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:20:26.1011][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 10412.1681ms 
+[2018-03-11 23:20:26.1365][IRYANBASNET][Info] Request finished in 10518.9702ms 200 application/json; charset=utf-8 
+[2018-03-11 23:21:37.8858][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:21:38.0290][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:21:40.4506][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:21:40.5365][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:21:40.5717][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 2575.0533ms 
+[2018-03-11 23:21:40.6034][IRYANBASNET][Info] Request finished in 2758.5719ms 200 application/json; charset=utf-8 
+[2018-03-11 23:22:41.9063][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:22:41.9421][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:22:44.4030][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:22:44.4816][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:22:44.4862][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 2545.9075ms 
+[2018-03-11 23:22:44.5173][IRYANBASNET][Info] Request finished in 2600.0133ms 200 application/json; charset=utf-8 
+[2018-03-11 23:25:00.7129][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:25:00.8032][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:25:02.1992][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:25:02.2989][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:25:02.3239][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 1523.6763ms 
+[2018-03-11 23:25:02.3689][IRYANBASNET][Info] Request finished in 1728.9137ms 200 application/json; charset=utf-8 
+[2018-03-11 23:25:36.9423][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:25:36.9602][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:25:36.9948][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:25:37.0779][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:25:37.1056][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 133.3852ms 
+[2018-03-11 23:25:37.1433][IRYANBASNET][Info] Request finished in 197.4486ms 200 application/json; charset=utf-8 
+[2018-03-11 23:27:52.2615][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:27:52.2769][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:27:52.3082][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:27:52.3508][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:27:52.3508][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 79.7733ms 
+[2018-03-11 23:27:52.3660][IRYANBASNET][Info] Request finished in 105.3884ms 200 application/json; charset=utf-8 
+[2018-03-11 23:28:56.4809][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:28:56.5392][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:28:56.5895][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:28:56.6117][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:28:56.6174][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 109.5153ms 
+[2018-03-11 23:28:56.6319][IRYANBASNET][Info] Request finished in 172.5222ms 200 application/json; charset=utf-8 
+[2018-03-11 23:31:11.4571][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/   
+[2018-03-11 23:31:11.4571][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:31:11.7813][IRYANBASNET][Info] Request finished in 411.8766ms 404  
+[2018-03-11 23:31:11.9147][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:31:11.9451][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:31:12.0240][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:31:12.1215][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 236.1128ms 
+[2018-03-11 23:31:12.1343][IRYANBASNET][Info] Request finished in 770.6424ms 200 application/json; charset=utf-8 
+[2018-03-11 23:31:15.1626][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:31:15.1822][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:31:15.2084][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:31:15.3256][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:31:15.3510][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 150.9136ms 
+[2018-03-11 23:31:15.3841][IRYANBASNET][Info] Request finished in 227.9582ms 200 application/json; charset=utf-8 
+[2018-03-11 23:31:29.0907][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:31:29.1260][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:31:29.1528][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:31:29.2388][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:31:29.2668][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 120.2318ms 
+[2018-03-11 23:31:29.3101][IRYANBASNET][Info] Request finished in 215.4256ms 200 application/json; charset=utf-8 
+[2018-03-11 23:36:02.8849][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:36:02.9221][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:36:02.9571][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:36:03.0033][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:36:03.0033][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 88.492ms 
+[2018-03-11 23:36:03.0304][IRYANBASNET][Info] Request finished in 145.3776ms 200 application/json; charset=utf-8 
+[2018-03-11 23:40:01.5850][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:40:01.6252][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:40:01.6337][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:40:01.7132][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:40:01.7420][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 98.6614ms 
+[2018-03-11 23:40:01.7736][IRYANBASNET][Info] Request finished in 195.4417ms 200 application/json; charset=utf-8 
+[2018-03-11 23:40:55.8804][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:40:55.9393][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:40:55.9532][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:41:10.5683][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:41:10.5804][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 14657.8806ms 
+[2018-03-11 23:41:10.6492][IRYANBASNET][Info] Request finished in 14747.1251ms 200 application/json; charset=utf-8 
+[2018-03-11 23:42:06.4293][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:42:06.5049][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:42:06.5049][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:42:07.9885][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:42:08.0068][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 1512.7862ms 
+[2018-03-11 23:42:08.0621][IRYANBASNET][Info] Request finished in 1610.7759ms 200 application/json; charset=utf-8 
+[2018-03-11 23:43:29.8226][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:43:29.9029][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:43:29.9329][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:43:31.4060][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:43:31.4122][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 1508.8967ms 
+[2018-03-11 23:43:31.4428][IRYANBASNET][Info] Request finished in 1640.0569ms 200 application/json; charset=utf-8 
+[2018-03-11 23:43:48.2345][IRYANBASNET][Info] Request starting HTTP/1.1 GET http://localhost:64300/api/rooms   
+[2018-03-11 23:43:48.2533][IRYANBASNET][Info] Executing action method api.roomrental.controllers.RoomController.GetRooms (api.roomrental) with arguments ((null)) - ModelState is Valid 
+[2018-03-11 23:43:48.2983][IRYANBASNET][Info] logggin information 
+[2018-03-11 23:43:58.0906][IRYANBASNET][Info] Executing ObjectResult, writing value Microsoft.AspNetCore.Mvc.ControllerContext. 
+[2018-03-11 23:43:58.1038][IRYANBASNET][Info] Executed action api.roomrental.controllers.RoomController.GetRooms (api.roomrental) in 9846.8895ms 
+[2018-03-11 23:43:58.1380][IRYANBASNET][Info] Request finished in 9901.3075ms 200 application/json; charset=utf-8 

@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 // components
 import { AppComponent } from './app.component';
@@ -20,6 +21,7 @@ import { DialogModule } from 'primeng/dialog';
 import { SignupComponent } from './signup/signup.component';
 import { PanelModule } from 'primeng/panel';
 import {InputTextModule} from 'primeng/inputtext';
+import { AuthService } from './lib/services/AuthServce';
 
 
 
@@ -34,6 +36,7 @@ import {InputTextModule} from 'primeng/inputtext';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
     ButtonModule,
@@ -44,7 +47,7 @@ import {InputTextModule} from 'primeng/inputtext';
       appRoutes // <-- debugging purposes only
     )
   ],
-  providers: [],
+  providers: [AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

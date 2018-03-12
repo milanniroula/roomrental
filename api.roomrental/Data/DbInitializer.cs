@@ -20,10 +20,9 @@ namespace api.roomrental.Data
         private readonly RoomRentalDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
-        private readonly ILogger<DbInitializer> _logger;
 
         public DbInitializer(RoomRentalDbContext context, UserManager<ApplicationUser> userManager,
-            RoleManager<IdentityRole> roleManager, ILogger<DbInitializer> logger)
+            RoleManager<IdentityRole> roleManager)
         {
             _context = context;
             _userManager = userManager;
@@ -31,7 +30,6 @@ namespace api.roomrental.Data
         }
         public async Task Seed()
         {
-            _logger.LogInformation("Checking Database started..");
             _context.Database.EnsureCreated();
 
             if (_context.Roles.Any() && _context.ApplicationUsers.Any())

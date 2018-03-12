@@ -14,7 +14,6 @@
             <input type="text" pInputText [(ngModel)]="user.userName" formControlName="userName">
             <label for="float-input">Email</label>
           </span>
-          <span *ngIf="userRegistrationForm.controls['userName'].errors.required">Email Required</span>
         </div>
         <div class="input-group">
           <span class="ui-float-label">
@@ -33,8 +32,7 @@
             <input type="password" pInputText [(ngModel)]="user.confirmPassword" formControlName="confirmPassword" #confirmPassword>
             <label for="float-input">Password</label>
           </span>
-          <span *ngIf="userRegistrationForm.controls['confirmPassword'].errors.mismatch">Email Required</span>
-          <span *ngIf="userRegistrationForm.controls['confirmPassword'].errors.mismatch">Email Required</span>
+         
         
         </div>
         

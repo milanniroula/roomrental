@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AppValidator } from '../lib/helpers/Validators';
+import { AuthService } from '../lib/services/AuthServce';
 
 @Component({
   selector: 'signup',
@@ -12,22 +13,25 @@ export class SignupComponent implements OnInit {
   public user: IUserRegistrationModel = { userName: '', password: '', phoneNumber: '', confirmPassword: '' };
   public userRegistrationForm: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private auth: AuthService) { }
 
   ngOnInit() {
     this.userRegistrationForm = this.formBuilder.group({
 
-      userName: ['', [Validators.required, Validators.email]],
-      phoneNumber: ['', [Validators.required, Validators.minLength(10), Validators.maxLength(10), AppValidator.PhoneNumber]],
+      userName: ['', [Validators.required]],
+      phoneNumber: ['', [Validators.required]],
       password: ['', [Validators.required, Validators.minLength(4)]],
-      confirmPassword: ['', [Validators.required, Validators.minLength(4), AppValidator.MatchPassword]]
+      confirmPassword: ['', [Validators.required]]
 
     });
   }
 
 
   public signup(form) {
-  
+    let url = "srv/api/rooms";
+    this.auth.getRooms(url).subscribe(res => {
+      console.log(res);
+    });
   }
 
 }
