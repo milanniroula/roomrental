@@ -1,5 +1,5 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
@@ -15,8 +15,9 @@ import { appRoutes } from './routes';
 
 
 // third party
-import { ButtonModule } from 'primeng/button';
-import { DialogModule } from 'primeng/dialog';
+
+import {ButtonModule} from 'primeng/button';
+import {DialogModule} from 'primeng/dialog';
 import { SignupComponent } from './signup/signup.component';
 import { PanelModule } from 'primeng/panel';
 import {InputTextModule} from 'primeng/inputtext';
@@ -29,8 +30,11 @@ import {InputTextModule} from 'primeng/inputtext';
     AppComponent,
     TopMenuComponent,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+
   ],
+  schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
