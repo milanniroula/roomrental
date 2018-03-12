@@ -32,6 +32,7 @@ export class SignupComponent implements OnInit {
     this.auth.getRooms(url).subscribe(res => {
       console.log(res);
     });
+
   }
 
 }

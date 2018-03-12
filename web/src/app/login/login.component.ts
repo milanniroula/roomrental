@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA, Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'login-dialog',
@@ -8,22 +9,31 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class LoginComponent implements OnInit {
 
-  public minHeight: number = 250;
-  public width: number = 400;
+  public minHeight = 250;
+  public width = 400;
 
   public loginForm: FormGroup;
-  public displayLogin: boolean = false;
+  public displayLogin = false;
 
   constructor(private formBuilder: FormBuilder) { }
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: [],
-      password: []
+      username: [ '', Validators.required],
+      password: ['', Validators.required]
     })
+
+
+
   }
 
-  public openLoginDialog() {
+
+
+    public  openLoginDialog() {
+    console.log('test');
     this.displayLogin = true;
   }
+
 }
+
+

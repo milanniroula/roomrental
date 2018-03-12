@@ -1,6 +1,5 @@
 <p-dialog [(visible)]="displayLogin" modal=true closeOnEscape=false dismissaleMask=false [minHeight]="height" [width]="width"
   styleClass="login-dialog">
-
   <p-header>Sign in to your account</p-header>
 
   <ng-container>
@@ -12,8 +11,19 @@
             <span class="ui-inputgroup-addon">
               <i class="fa fa-envelope"></i>
             </span>
-            <input type="text" pInputText placeholder="Email address">
+            <input
+            formControlName="username"
+            type="text" pInputText placeholder="Email address">
           </div>
+          <div>
+              <div class="ui-message ui-messages-error ui-corner-all"
+                 *ngIf= "loginForm.get('username').touched && loginForm.get('username').invalid">
+
+                <i class="fa fa-close"></i>
+                Username is required
+              </div>
+          </div>
+
         </div>
         <div class="ui-g-1"></div>
       </div>
@@ -24,8 +34,16 @@
             <span class="ui-inputgroup-addon">
               <i class="fa fa-lock"></i>
             </span>
-            <input type="password" pInputText placeholder="Password">
+            <input
+            formControlName="password"
+            type="password" pInputText placeholder="Password">
           </div>
+              <div class="ui-message ui-messages-error ui-corner-all"
+                  *ngIf= "loginForm.get('password').touched && loginForm.get('password').invalid">
+
+                <i class="fa fa-close"></i>
+                  Password is required
+              </div>
         </div>
         <div class="ui-g-1"></div>
       </div>
@@ -38,7 +56,6 @@
       <div class="ui-g-1"></div>
     </div>
   </ng-container>
-
   <p-footer>
     <div class="ui-g">
       <div class="ui-g-6 text-center">
@@ -49,4 +66,4 @@
       </div>
     </div>
   </p-footer>
-</p-dialog>
+  </p-dialog>

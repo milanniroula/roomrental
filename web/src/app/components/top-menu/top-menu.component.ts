@@ -17,7 +17,7 @@ export class TopMenuComponent implements OnInit {
   }
 
   public onLoginClick() {
-    console.log("top-component");
+
 
     this.onLogin.next(true);
   }
