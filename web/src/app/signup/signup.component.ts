@@ -1,3 +1,4 @@
+
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { AppValidator } from '../lib/helpers/Validators';
@@ -18,17 +19,17 @@ export class SignupComponent implements OnInit {
   ngOnInit() {
     this.userRegistrationForm = this.formBuilder.group({
 
-      userName: ['', [Validators.required]],
-      phoneNumber: ['', [Validators.required]],
-      password: ['', [Validators.required, Validators.minLength(4)]],
-      confirmPassword: ['', [Validators.required]]
+      userName: ['', [Validators.required, AppValidator.isEmailValid('Email') ]],
+      phoneNumber: ['', [Validators.required, AppValidator.isValidPhoneNumber ]],
+      password: ['', [Validators.required, Validators.pattern('((?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,15})')]],
+      confirmPassword: ['', [Validators.required, AppValidator.MatchPassword]]
 
     });
   }
 
 
   public signup(form) {
-    let url = "srv/api/rooms";
+    const url = 'srv/api/rooms';
     this.auth.getRooms(url).subscribe(res => {
       console.log(res);
     });

@@ -17,23 +17,28 @@
         </div>
         <div class="input-group">
           <span class="ui-float-label">
-            <input type="text" pInputText [(ngModel)]="user.phoneNumber" formControlName="phoneNumber">
+            <input type="text"
+            required
+            pInputText [(ngModel)]="user.phoneNumber"
+
+            formControlName="phoneNumber">
+
             <label for="float-input">Phone Number</label>
           </span>
         </div>
         <div class="input-group">
           <span class="ui-float-label">
-            <input type="password" pInputText [(ngModel)]="user.password" formControlName="password">
+            <input type="text" pInputText [(ngModel)]="user.password" formControlName="password">
             <label for="float-input">Password</label>
           </span>
         </div>
         <div class="input-group">
           <span class="ui-float-label">
-            <input type="password" pInputText [(ngModel)]="user.confirmPassword" formControlName="confirmPassword" #confirmPassword>
+            <input type="text" pInputText [(ngModel)]="user.confirmPassword" formControlName="confirmPassword" #confirmPassword>
             <label for="float-input">Password</label>
           </span>
-         
-        
+
+
         </div>
 
       </form>
