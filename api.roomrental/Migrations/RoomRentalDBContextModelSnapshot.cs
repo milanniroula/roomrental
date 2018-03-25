@@ -11,7 +11,7 @@ using System;
 
 namespace api.roomrental.Migrations
 {
-    [DbContext(typeof(RoomRentalDbContext))]
+    [DbContext(typeof(RoomrentalDbContext))]
     partial class RoomRentalDbContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)

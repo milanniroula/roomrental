@@ -11,7 +11,7 @@ using System;
 
 namespace api.roomrental.Migrations
 {
-    [DbContext(typeof(RoomRentalDbContext))]
+    [DbContext(typeof(RoomrentalDbContext))]
     [Migration("20180310060918_ApplicationUser Prop update")]
     partial class ApplicationUserPropupdate
     {

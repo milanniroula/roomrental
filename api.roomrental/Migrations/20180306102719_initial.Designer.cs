@@ -10,7 +10,7 @@ using System;
 
 namespace api.roomrental.Migrations
 {
-    [DbContext(typeof(RoomRentalDbContext))]
+    [DbContext(typeof(RoomrentalDbContext))]
     [Migration("20180306102719_initial")]
     partial class initial
     {

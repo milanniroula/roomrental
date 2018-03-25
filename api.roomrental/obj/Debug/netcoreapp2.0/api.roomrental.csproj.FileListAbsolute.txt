@@ -10,3 +10,14 @@ D:\projects\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.Ass
 D:\projects\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.dll
 D:\projects\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.pdb
 D:\projects\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.csprojResolveAssemblyReference.cache
+D:\projetcs\roomrental\api.roomrental\bin\Debug\netcoreapp2.0\nlog.config
+D:\projetcs\roomrental\api.roomrental\bin\Debug\netcoreapp2.0\api.roomrental.deps.json
+D:\projetcs\roomrental\api.roomrental\bin\Debug\netcoreapp2.0\api.roomrental.runtimeconfig.json
+D:\projetcs\roomrental\api.roomrental\bin\Debug\netcoreapp2.0\api.roomrental.runtimeconfig.dev.json
+D:\projetcs\roomrental\api.roomrental\bin\Debug\netcoreapp2.0\api.roomrental.dll
+D:\projetcs\roomrental\api.roomrental\bin\Debug\netcoreapp2.0\api.roomrental.pdb
+D:\projetcs\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.csproj.CoreCompileInputs.cache
+D:\projetcs\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.AssemblyInfoInputs.cache
+D:\projetcs\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.AssemblyInfo.cs
+D:\projetcs\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.dll
+D:\projetcs\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.pdb

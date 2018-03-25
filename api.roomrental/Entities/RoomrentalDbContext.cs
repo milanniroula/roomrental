@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace api.roomrental.models
 {
-    public class RoomRentalDbContext : IdentityDbContext
+    public class RoomrentalDbContext : IdentityDbContext
     {
 
-        public RoomRentalDbContext(DbContextOptions<RoomRentalDbContext> options) : base(options) { }
+        public RoomrentalDbContext(DbContextOptions<RoomrentalDbContext> options) : base(options) { }
 
         public DbSet<ApplicationUser> ApplicationUsers { get; set; }
         public DbSet<Property> Rooms { get; set; }

@@ -13291,23 +13291,23 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\iryan\\.nuget\\packages\\": {},
+    "C:\\Users\\rajes\\.nuget\\packages\\": {},
     "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\projects\\roomrental\\api.roomrental\\api.roomrental.csproj",
+      "projectUniqueName": "D:\\projetcs\\roomrental\\api.roomrental\\api.roomrental.csproj",
       "projectName": "api.roomrental",
-      "projectPath": "D:\\projects\\roomrental\\api.roomrental\\api.roomrental.csproj",
-      "packagesPath": "C:\\Users\\iryan\\.nuget\\packages\\",
-      "outputPath": "D:\\projects\\roomrental\\api.roomrental\\obj\\",
+      "projectPath": "D:\\projetcs\\roomrental\\api.roomrental\\api.roomrental.csproj",
+      "packagesPath": "C:\\Users\\rajes\\.nuget\\packages\\",
+      "outputPath": "D:\\projetcs\\roomrental\\api.roomrental\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
       ],
       "configFilePaths": [
-        "C:\\Users\\iryan\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\rajes\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [

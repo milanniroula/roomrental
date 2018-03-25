@@ -1,10 +1,7 @@
 ﻿using api.roomrental.Entities;
 using api.roomrental.models;
 using api.roomrental.Models;
-using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
@@ -17,11 +14,11 @@ namespace api.roomrental.Data
     public class DbInitializer
     {
 
-        private readonly RoomRentalDbContext _context;
+        private readonly RoomrentalDbContext _context;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public DbInitializer(RoomRentalDbContext context, UserManager<ApplicationUser> userManager,
+        public DbInitializer(RoomrentalDbContext context, UserManager<ApplicationUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {
             _context = context;

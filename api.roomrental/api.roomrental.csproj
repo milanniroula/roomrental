@@ -5,8 +5,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\" />
-    <Folder Include="Services\" />
+    <Folder Include="Auth\" />
+    <Folder Include="Va\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
