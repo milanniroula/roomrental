@@ -23,7 +23,7 @@ namespace api.roomrental.Services
         }
 
 
-        public async Task<IdentityResult> CreateUserAsync(UserRegistrationDAO userDao)
+        public async Task<IdentityResult> CreateUserAsync(UserRegistrationViewModel userDao)
         {
             var user = _mapper.Map<ApplicationUser>(userDao);
             var result = await _userManager.CreateAsync(user, userDao.Password);

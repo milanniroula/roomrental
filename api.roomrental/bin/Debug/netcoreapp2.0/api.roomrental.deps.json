@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v2.0",
-    "signature": "d31f5431248e50ffefbd01b4fe3ed0c43a8c7bda"
+    "signature": "e84380cd596a2f0ee3121bbfc1b28363037893d4"
   },
   "compilationOptions": {
     "defines": [
@@ -33,7 +33,8 @@
           "Microsoft.Extensions.Configuration.Json": "2.0.0",
           "Microsoft.NETCore.App": "2.0.0",
           "Microsoft.VisualStudio.Web.CodeGeneration.Design": "2.0.2",
-          "NLog.Extensions.Logging": "1.0.0-rtm-rc7"
+          "NLog.Extensions.Logging": "1.0.0-rtm-rc7",
+          "NUnit": "3.10.1"
         },
         "runtime": {
           "api.roomrental.dll": {}
@@ -2577,6 +2578,17 @@
         },
         "compile": {
           "lib/netstandard1.3/NuGet.Frameworks.dll": {}
+        }
+      },
+      "NUnit/3.10.1": {
+        "dependencies": {
+          "NETStandard.Library": "2.0.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/nunit.framework.dll": {}
+        },
+        "compile": {
+          "lib/netstandard2.0/nunit.framework.dll": {}
         }
       },
       "Remotion.Linq/2.1.1": {
@@ -5573,6 +5585,13 @@
       "sha512": "sha512-WCkN68c8q+USG+Ot1MmBDH+9DUo5dk7UB0QDMiwCYhrH7ZoFLKFGGNzJ8C3LTR1DvB1LW9BOxKeznnZznKiCTA==",
       "path": "nuget.frameworks/4.0.0",
       "hashPath": "nuget.frameworks.4.0.0.nupkg.sha512"
+    },
+    "NUnit/3.10.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-E3ii6+VLdeIxTQ5gPjk/7g/xl+aCifbfcIkiGayZCuos+22FEdtKGrxMe6SzoXCQCcL7gdqhfNIFTaZ1+dS18g==",
+      "path": "nunit/3.10.1",
+      "hashPath": "nunit.3.10.1.nupkg.sha512"
     },
     "Remotion.Linq/2.1.1": {
       "type": "package",

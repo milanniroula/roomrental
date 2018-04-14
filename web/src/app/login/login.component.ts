@@ -34,6 +34,13 @@ export class LoginComponent implements OnInit {
     this.displayLogin = true;
   }
 
+  public test(){
+
+    console.log('here');
+    
+
+  }
+
 }
 
 

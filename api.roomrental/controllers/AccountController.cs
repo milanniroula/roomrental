@@ -19,14 +19,15 @@ namespace api.roomrental.controllers
         public AccountController(IAuthService auth)
         {
             _auth = auth;
-
+            
         }
 
+        // TODO
         [Route("signup")]
         [HttpPost()]
-        public async Task<IActionResult> SignupAsync([FromBody] UserRegistrationDAO userDao)
+        public async Task<IActionResult> SignupAsync([FromBody] UserRegistrationViewModel userDao)
         {
-
+           
             if (!ModelState.IsValid)
             {
                 return BadRequest(ModelState);
@@ -38,7 +39,6 @@ namespace api.roomrental.controllers
                 return Ok();
             }
             return BadRequest(Errors.AddErrorsToModelState(registerResult, ModelState));
-
         }
 
 

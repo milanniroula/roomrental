@@ -2,7 +2,7 @@
 
 namespace api.roomrental.Models
 {
-    public class UserRegistrationDAO
+    public class UserRegistrationViewModel
     {
         [Required]
         public string FirstName { get; set; }

@@ -6,6 +6,6 @@ namespace api.roomrental.Services
 {
     public interface IAuthService
     {
-       Task<IdentityResult> CreateUserAsync(UserRegistrationDAO userDao);
+       Task<IdentityResult> CreateUserAsync(UserRegistrationViewModel userDao);
     }
 }

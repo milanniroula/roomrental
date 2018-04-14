@@ -21,3 +21,4 @@ D:\projetcs\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.Ass
 D:\projetcs\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.AssemblyInfo.cs
 D:\projetcs\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.dll
 D:\projetcs\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.pdb
+D:\projetcs\roomrental\api.roomrental\obj\Debug\netcoreapp2.0\api.roomrental.csprojResolveAssemblyReference.cache

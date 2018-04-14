@@ -51,7 +51,7 @@ namespace api.roomrental.Data
             if (!_context.ApplicationUsers.Any())
             {
                 string filePath = @"Data" + Path.DirectorySeparatorChar + "UserSeedData.json";
-                var users = JsonConvert.DeserializeObject<List<UserRegistrationDAO>>(File.ReadAllText(filePath));
+                var users = JsonConvert.DeserializeObject<List<UserRegistrationViewModel>>(File.ReadAllText(filePath));
 
                 foreach (var user in users)
                 {
