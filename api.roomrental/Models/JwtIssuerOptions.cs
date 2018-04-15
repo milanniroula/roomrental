@@ -32,12 +32,12 @@ namespace api.roomrental.Models
         /// <summary>
         /// 4.1.5.  "nbf" (Not Before) Claim - The "nbf" (not before) claim identifies the time before which the JWT MUST NOT be accepted for processing.
         /// </summary>
-        public DateTime NotBefore => DateTime.UtcNow;
+        public DateTime NotBefore => DateTime.UtcNow.ToLocalTime();
 
         /// <summary>
         /// 4.1.6.  "iat" (Issued At) Claim - The "iat" (issued at) claim identifies the time at which the JWT was issued.
         /// </summary>
-        public DateTime IssuedAt => DateTime.UtcNow;
+        public DateTime IssuedAt => DateTime.UtcNow.ToLocalTime();
 
         /// <summary>
         /// Set the timespan the token will be valid for (default is 120 min)

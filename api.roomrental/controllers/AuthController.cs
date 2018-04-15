@@ -44,7 +44,7 @@ namespace api.roomrental.controllers
             if (identity == null)
                 return BadRequest(Errors.AddErrorToModelState("error", "Invalid username or password.", ModelState));
 
-            var jwt = await Tokens.GenerateJwt(identity, _jwtService, model.Email, _jwtOptions, new JsonSerializerSettings { Formatting = Formatting.Indented });
+            var jwt = await Tokens.GenerateJwt(identity, _jwtService, model.Email, _jwtOptions, new JsonSerializerSettings { Formatting = Formatting.None });
 
             return new OkObjectResult(jwt);
         }

@@ -11,16 +11,16 @@ namespace api.roomrental.Helpers
 {
     public class Tokens
     {
-        public static async Task<string> GenerateJwt(ClaimsIdentity identity, IJwtService jwtService, string userName, JwtIssuerOptions jwtOptions, JsonSerializerSettings serializerSettings)
+        public static async Task<dynamic> GenerateJwt(ClaimsIdentity identity, IJwtService jwtService, string userName, JwtIssuerOptions jwtOptions, JsonSerializerSettings serializerSettings)
         {
             var response = new
             {
                 id = identity.Claims.Single(c => c.Type == ClaimTypes.NameIdentifier).Value,
-                auth_token = await jwtService.GenerateEncodedToken(userName, identity),
-                expires_in = (int)jwtOptions.ValidFor.TotalSeconds
+                accessToken = await jwtService.GenerateEncodedToken(userName, identity),
+                expiresIn = (int)jwtOptions.ValidFor.TotalSeconds
             };
 
-            return JsonConvert.SerializeObject(response, serializerSettings);
+            return response;
         }
     }
 }

@@ -8,9 +8,9 @@ using System.Threading.Tasks;
 using api.roomrental.Models;
 using Microsoft.Extensions.Options;
 using System.Linq;
-using api.roomrental.Servcices.Jwt;
 
-namespace api.roomrental.Services.Jwt
+
+namespace api.roomrental.Servcices.Jwt
 
 {
     public class JwtService : IJwtService
@@ -29,12 +29,8 @@ namespace api.roomrental.Services.Jwt
          {
                  new Claim(JwtRegisteredClaimNames.Sub, userName),
                  new Claim(JwtRegisteredClaimNames.Jti, await _jwtOptions.JtiGenerator()),
-                 new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(_jwtOptions.IssuedAt).ToString(),
-                 ClaimValueTypes.Integer64)
-             };
-
-            //add role claims and id
-            claims.ToList().AddRange(identity.Claims);
+                 new Claim(JwtRegisteredClaimNames.Iat, ToUnixEpochDate(_jwtOptions.IssuedAt).ToString(), ClaimValueTypes.Integer64),
+             }.Union(identity.Claims.ToArray());
 
             // Create the JWT security token and encode it.
             var jwt = new JwtSecurityToken(
@@ -50,14 +46,14 @@ namespace api.roomrental.Services.Jwt
             return encodedJwt;
         }
 
-        public ClaimsIdentity GenerateClaimsIdentity(string userName, string id,IList<string> roles)
+        public ClaimsIdentity GenerateClaimsIdentity(string userName, string id, IList<string> roles)
         {
             var claims = new List<Claim>();
             claims.Add(new Claim(ClaimTypes.NameIdentifier, id));
 
-            roles.ToList().ForEach(r=> claims.Add(new Claim(ClaimTypes.Role, r)));
+            roles.ToList().ForEach(r => claims.Add(new Claim(ClaimTypes.Role, r)));
 
-            return new ClaimsIdentity(new GenericIdentity(userName, "Token"),claims.ToArray());
+            return new ClaimsIdentity(new GenericIdentity(userName, "Token"), claims.ToArray());
         }
 
         /// <returns>Date converted to seconds since Unix epoch (Jan 1, 1970, midnight UTC).</returns>

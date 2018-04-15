@@ -1,11 +1,11 @@
 ﻿using api.roomrental.Data;
 using api.roomrental.Entities;
+using api.roomrental.Helpers;
 using api.roomrental.models;
 using api.roomrental.Models;
 using api.roomrental.Servcices.Jwt;
 using api.roomrental.Services;
 using api.roomrental.Services.Auth;
-using api.roomrental.Services.Jwt;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -19,6 +19,7 @@ using Microsoft.IdentityModel.Tokens;
 using Newtonsoft.Json.Serialization;
 using NLog.Extensions.Logging;
 using System;
+using System.Security.Claims;
 using System.Text;
 
 namespace api.roomrental
@@ -27,7 +28,7 @@ namespace api.roomrental
     {
         public IConfiguration Configuration { get; }
         private const string SecretKey = "iNivDmHLpUA223sqsfhqGbMRdRj1PVkH"; // todo: get this from somewhere secure
-        private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(SecretKey));
+        private readonly SymmetricSecurityKey _signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(SecretKey));
 
         public Startup(IConfiguration configuration, ILogger<Startup> logger)
         {
@@ -49,7 +50,7 @@ namespace api.roomrental
                 options.Password.RequireUppercase = false;
                 options.Password.RequireLowercase = false;
                 options.Password.RequiredUniqueChars = 0;
-                options.User.RequireUniqueEmail= true;
+                options.User.RequireUniqueEmail = true;
             })
             .AddEntityFrameworkStores<RoomrentalDbContext>()
             .AddDefaultTokenProviders();
@@ -68,6 +69,7 @@ namespace api.roomrental
                 options.Issuer = jwtAppSettingOptions[nameof(JwtIssuerOptions.Issuer)];
                 options.Audience = jwtAppSettingOptions[nameof(JwtIssuerOptions.Audience)];
                 options.SigningCredentials = new SigningCredentials(_signingKey, SecurityAlgorithms.HmacSha256);
+                options.ValidFor = TimeSpan.FromMinutes(double.Parse(jwtAppSettingOptions[nameof(JwtIssuerOptions.ValidFor)]));
             });
 
             var tokenValidationParameters = new TokenValidationParameters
@@ -102,9 +104,21 @@ namespace api.roomrental
             services.AddTransient<IAuthService, AuthService>();
             services.AddTransient<IJwtService, JwtService>();
 
+            // api user claim policy
+            //services.AddAuthorization(options =>
+            //{
+            //    options.AddPolicy("ApiUser", policy => policy.RequireClaim(ClaimTypes.Role, Constants.Strings.Roles.User));
+            //});
+
+            services.AddAuthorization(options =>
+            {
+                options.AddPolicy("ApiUser", policy => policy.RequireClaim(ClaimTypes.Role, Constants.Strings.Roles.User));
+            });
+
             services.AddAutoMapper(cfg => cfg.AddProfile(new MapperProfile()));
             services.AddCors();
-            services.AddMvc().AddJsonOptions(options=> {
+            services.AddMvc().AddJsonOptions(options =>
+            {
                 options.SerializerSettings.ContractResolver = new CamelCasePropertyNamesContractResolver();
             });
         }
@@ -120,6 +134,7 @@ namespace api.roomrental
 
             loggerFactory.AddNLog();
             app.UseCors(options => options.AllowAnyOrigin());
+            app.UseAuthentication();
             app.UseMvc();
         }
     }
