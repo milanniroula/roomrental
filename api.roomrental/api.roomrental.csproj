@@ -5,7 +5,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Auth\" />
     <Folder Include="Models\daos\" />
     <Folder Include="Va\" />
     <Folder Include="wwwroot\" />
