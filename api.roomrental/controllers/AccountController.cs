@@ -2,10 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using api.roomrental.Entities;
 using api.roomrental.Helpers;
 using api.roomrental.Models;
+using api.roomrental.Models.viewmodels;
 using api.roomrental.Services;
+using api.roomrental.Services.Message;
 using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 
 namespace api.roomrental.controllers
@@ -16,10 +20,16 @@ namespace api.roomrental.controllers
     {
 
         private readonly IAccountService _auth;
-        public AccountController(IAccountService auth)
+        private readonly UserManager<ApplicationUser>  _userManager;
+        private readonly IEmailSender _messageService;
+
+        public AccountController(IAccountService auth, UserManager<ApplicationUser> userManager, IEmailSender messageService)
         {
             _auth = auth;
-            
+            _userManager = userManager;
+            _messageService = messageService;
+
+
         }
 
         // TODO
@@ -40,6 +50,28 @@ namespace api.roomrental.controllers
                 return Ok();
             }
             return BadRequest(Errors.AddErrorsToModelState(registerResult, ModelState));
+        }
+
+        [Route("forgotpassword")]
+        [HttpPost()]
+        public async Task<IActionResult> ForgotPassword([FromBody] ForgotPasswordViewModel model)
+        {
+            if (ModelState.IsValid)
+            {
+                var user = await _userManager.FindByEmailAsync(model.Email);
+
+                if (user == null)
+                    return Ok();
+
+                string code = await _userManager.GeneratePasswordResetTokenAsync(user);
+                await _messageService.SendEmailAsync(model.Email, "test", "Hello");
+                return Ok(new { code = code });
+            }
+
+            return BadRequest( ModelState);
+
+
+
         }
 
 

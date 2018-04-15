@@ -6,6 +6,7 @@ using api.roomrental.Models;
 using api.roomrental.Servcices.Jwt;
 using api.roomrental.Services;
 using api.roomrental.Services.Auth;
+using api.roomrental.Services.Message;
 using AutoMapper;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
@@ -59,8 +60,14 @@ namespace api.roomrental
             // DB initialise only development
             services.AddScoped<DbInitializer, DbInitializer>();
 
-            //JWt 
 
+            // Email 
+            var emailServiceOpotions = Configuration.GetSection(nameof(EmailServiceOptions));
+            services.Configure<EmailServiceOptions>(emailServiceOpotions);
+
+            services.AddScoped<IEmailSender, MessageService>();
+
+            //JWt 
             var jwtAppSettingOptions = Configuration.GetSection(nameof(JwtIssuerOptions));
 
             // Configure JwtIssuerOptions
