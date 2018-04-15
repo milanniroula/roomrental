@@ -4,8 +4,9 @@ using System.Threading.Tasks;
 
 namespace api.roomrental.Services
 {
-    public interface IAuthService
+    public interface IAccountService
     {
-       Task<IdentityResult> CreateUserAsync(UserRegistrationViewModel userDao);
+       Task<IdentityResult> CreateUserAsync(UserRegistrationDAO userDao);
+
     }
 }

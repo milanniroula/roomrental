@@ -1,16 +1,16 @@
 ﻿[
   {
-    "Name": "Super Administrator"
+    "Name": "Super Admin"
   },
   {
-    "Name": "Administrator"
+    "Name": "Admin"
   },
   {
     "Name": "Moderator"
   },
 
   {
-    "Name": "General"
+    "Name": "User"
   }
 
 ]

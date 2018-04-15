@@ -15,8 +15,8 @@ namespace api.roomrental.controllers
     public class AccountController : Controller
     {
 
-        private readonly IAuthService _auth;
-        public AccountController(IAuthService auth)
+        private readonly IAccountService _auth;
+        public AccountController(IAccountService auth)
         {
             _auth = auth;
             
@@ -25,7 +25,7 @@ namespace api.roomrental.controllers
         // TODO
         [Route("signup")]
         [HttpPost()]
-        public async Task<IActionResult> SignupAsync([FromBody] UserRegistrationViewModel userDao)
+        public async Task<IActionResult> SignupAsync([FromBody] UserRegistrationDAO userDao)
         {
            
             if (!ModelState.IsValid)
@@ -36,6 +36,7 @@ namespace api.roomrental.controllers
             var registerResult = await _auth.CreateUserAsync(userDao);
             if (registerResult.Succeeded)
             {
+
                 return Ok();
             }
             return BadRequest(Errors.AddErrorsToModelState(registerResult, ModelState));
