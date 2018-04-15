@@ -5,8 +5,14 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Va\**" />
+    <Content Remove="Va\**" />
+    <EmbeddedResource Remove="Va\**" />
+    <None Remove="Va\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Folder Include="Models\daos\" />
-    <Folder Include="Va\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 
