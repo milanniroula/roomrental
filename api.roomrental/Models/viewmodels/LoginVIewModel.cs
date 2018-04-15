@@ -15,6 +15,7 @@ namespace api.roomrental.Models.viewmodels
         [Required]
         public string Password { get; set; }
         public string Remember { get; set; }
-        public string device { get; set; }
+        public string Device { get; set; }
+        public string UserAgent { get; set; }
     }
 }
