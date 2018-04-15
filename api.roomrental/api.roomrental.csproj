@@ -12,7 +12,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Models\daos\" />
+    <Folder Include="Models\dao\" />
     <Folder Include="wwwroot\" />
   </ItemGroup>
 

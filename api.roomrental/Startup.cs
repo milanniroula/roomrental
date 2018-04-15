@@ -99,6 +99,7 @@ namespace api.roomrental
                 configureOptions.SaveToken = true;
             });
 
+            // TODO service lifetimes accoring to requirement 
             // Application serivices 
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IAuthService, AuthService>();
@@ -112,7 +113,7 @@ namespace api.roomrental
 
             services.AddAuthorization(options =>
             {
-                options.AddPolicy("ApiUser", policy => policy.RequireClaim(ClaimTypes.Role, Constants.Strings.Roles.User));
+                options.AddPolicy(Constants.Strings.Policy.ApiUser, policy => policy.RequireClaim(ClaimTypes.Role, Constants.Strings.Roles.User));
             });
 
             services.AddAutoMapper(cfg => cfg.AddProfile(new MapperProfile()));

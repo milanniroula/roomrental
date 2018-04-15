@@ -13,7 +13,13 @@
                 public const string Admin = "Admin";
                 public const string Moderator = "Moderator";
                 public const string User = "User";
+            }
 
+            public static class Policy
+            {
+                public const string ApiUser = "ApiUser";
+                public const string ApiAdmin = "ApiAdmin";
+                public const string ApiMoserator = "ApiModerator";
 
             }
             public static class JwtClaimIdentifiers
