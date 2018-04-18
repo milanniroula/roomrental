@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 
 namespace api.roomrental.Data
 {
@@ -15,10 +16,10 @@ namespace api.roomrental.Data
     {
 
         private readonly RoomrentalDbContext _context;
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<AppUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
 
-        public DbInitializer(RoomrentalDbContext context, UserManager<ApplicationUser> userManager,
+        public DbInitializer(RoomrentalDbContext context, UserManager<AppUser> userManager,
             RoleManager<IdentityRole> roleManager)
         {
             _context = context;
@@ -27,8 +28,7 @@ namespace api.roomrental.Data
         }
         public async Task Seed()
         {
-            _context.Database.EnsureCreated();
-
+            _context.Database.Migrate();
             if (_context.Roles.Any() && _context.ApplicationUsers.Any())
             {
                 return; //DB already seeded
@@ -56,7 +56,7 @@ namespace api.roomrental.Data
                 foreach (var user in users)
                 {
                     var u
-                        = new ApplicationUser
+                        = new AppUser
                         {
                             UserName = user.UserName,
                             Email = user.UserName,

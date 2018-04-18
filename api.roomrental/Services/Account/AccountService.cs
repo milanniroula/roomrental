@@ -10,11 +10,11 @@ namespace api.roomrental.Services
     public class AccountService: IAccountService
     {
 
-        private readonly UserManager<ApplicationUser> _userManager;
+        private readonly UserManager<AppUser> _userManager;
         private readonly RoleManager<IdentityRole> _roleManager;
         private readonly IMapper _mapper;
 
-        public AccountService(UserManager<ApplicationUser> userManager,
+        public AccountService(UserManager<AppUser> userManager,
             RoleManager<IdentityRole> roleManager,
             IMapper mapper)
         {
@@ -26,7 +26,7 @@ namespace api.roomrental.Services
 
         public async Task<IdentityResult> CreateUserAsync(UserRegistrationDAO userDao)
         {
-            var user = _mapper.Map<ApplicationUser>(userDao);
+            var user = _mapper.Map<AppUser>(userDao);
             var result = await _userManager.CreateAsync(user, userDao.Password);
             if (result.Succeeded)
             {

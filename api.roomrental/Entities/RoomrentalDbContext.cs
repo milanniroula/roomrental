@@ -13,10 +13,8 @@ namespace api.roomrental.models
 
         public RoomrentalDbContext(DbContextOptions<RoomrentalDbContext> options) : base(options) { }
 
-        public DbSet<ApplicationUser> ApplicationUsers { get; set; }
-        public DbSet<Property> Rooms { get; set; }
-        public DbSet<PropertyType> PropertyType { get; set; }
-        public DbSet<PropertyType> PropertyAd { get; set; }
+        public DbSet<AppUser> ApplicationUsers { get; set; }
+
 
 
     }

@@ -17,7 +17,7 @@ namespace api.roomrental.controllers
     public class AuthController : Controller
     {
 
-        private UserManager<ApplicationUser> _userManager { get; set; }
+        private UserManager<AppUser> _userManager { get; set; }
         private IAuthService _auth { get; set; }
         private JwtIssuerOptions _jwtOptions { get; set; }
         private IJwtService _jwtService { get; set; }

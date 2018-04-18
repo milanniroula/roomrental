@@ -12,8 +12,8 @@ using System;
 namespace api.roomrental.Migrations
 {
     [DbContext(typeof(RoomrentalDbContext))]
-    [Migration("20180310060918_ApplicationUser Prop update")]
-    partial class ApplicationUserPropupdate
+    [Migration("20180418104302_test_database_migration_seed")]
+    partial class test_database_migration_seed
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,7 +22,7 @@ namespace api.roomrental.Migrations
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("api.roomrental.models.Property", b =>
+            modelBuilder.Entity("api.roomrental.Entities.Demo", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd();
@@ -31,19 +31,7 @@ namespace api.roomrental.Migrations
 
                     b.HasKey("ID");
 
-                    b.ToTable("Rooms");
-                });
-
-            modelBuilder.Entity("api.roomrental.models.PropertyType", b =>
-                {
-                    b.Property<int>("ID")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Type");
-
-                    b.HasKey("ID");
-
-                    b.ToTable("PropertyType");
+                    b.ToTable("Demos");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -210,7 +198,7 @@ namespace api.roomrental.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("api.roomrental.Entities.ApplicationUser", b =>
+            modelBuilder.Entity("api.roomrental.Entities.AppUser", b =>
                 {
                     b.HasBaseType("Microsoft.AspNetCore.Identity.IdentityUser");
 
@@ -218,9 +206,9 @@ namespace api.roomrental.Migrations
 
                     b.Property<string>("LastName");
 
-                    b.ToTable("ApplicationUser");
+                    b.ToTable("AppUser");
 
-                    b.HasDiscriminator().HasValue("ApplicationUser");
+                    b.HasDiscriminator().HasValue("AppUser");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

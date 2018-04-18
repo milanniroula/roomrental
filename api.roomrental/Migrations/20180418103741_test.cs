@@ -5,25 +5,12 @@ using System.Collections.Generic;
 
 namespace api.roomrental.Migrations
 {
-    public partial class initial : Migration
+    public partial class test : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "PropertyType",
-                columns: table => new
-                {
-                    ID = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
-                    Type = table.Column<string>(nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_PropertyType", x => x.ID);
-                });
-
-            migrationBuilder.CreateTable(
-                name: "Rooms",
+                name: "Demos",
                 columns: table => new
                 {
                     ID = table.Column<int>(nullable: false)
@@ -32,17 +19,14 @@ namespace api.roomrental.Migrations
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Rooms", x => x.ID);
+                    table.PrimaryKey("PK_Demos", x => x.ID);
                 });
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.DropTable(
-                name: "PropertyType");
-
-            migrationBuilder.DropTable(
-                name: "Rooms");
+                name: "Demos");
         }
     }
 }

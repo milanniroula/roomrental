@@ -12,11 +12,11 @@ namespace api.roomrental.Services.Auth
     public class AuthService : IAuthService
     {
 
-        private UserManager<ApplicationUser> _userManager { get; set; }
+        private UserManager<AppUser> _userManager { get; set; }
         private IJwtService _jwtService { get; set; }
 
 
-        public AuthService(UserManager<ApplicationUser> userManager, IJwtService jwtService)
+        public AuthService(UserManager<AppUser> userManager, IJwtService jwtService)
         {
 
             _userManager = userManager;

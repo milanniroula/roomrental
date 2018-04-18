@@ -3,14 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace api.roomrental.models
+namespace api.roomrental.Entities
 {
-    public class Property
+    public class Demo
     {
-
         public int ID { get; set; }
         public string Name { get; set; }
-
 
     }
 }

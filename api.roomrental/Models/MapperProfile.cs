@@ -12,7 +12,7 @@ namespace api.roomrental.Models
 
         public MapperProfile()
         {
-            CreateMap<ApplicationUser, UserRegistrationDAO>()
+            CreateMap<AppUser, UserRegistrationDAO>()
                 .ForMember(dao => dao.UserName, opt => opt.MapFrom(user => user.Email))
                 .ReverseMap();
         }

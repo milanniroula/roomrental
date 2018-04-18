@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace api.roomrental.Entities
 {
-    public class ApplicationUser : IdentityUser
+    public class AppUser : IdentityUser
     {
 
         public string FirstName { get; set; }

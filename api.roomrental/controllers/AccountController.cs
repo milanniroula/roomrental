@@ -20,10 +20,10 @@ namespace api.roomrental.controllers
     {
 
         private readonly IAccountService _auth;
-        private readonly UserManager<ApplicationUser>  _userManager;
+        private readonly UserManager<AppUser>  _userManager;
         private readonly IEmailSender _messageService;
 
-        public AccountController(IAccountService auth, UserManager<ApplicationUser> userManager, IEmailSender messageService)
+        public AccountController(IAccountService auth, UserManager<AppUser> userManager, IEmailSender messageService)
         {
             _auth = auth;
             _userManager = userManager;

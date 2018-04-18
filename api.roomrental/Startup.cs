@@ -43,7 +43,7 @@ namespace api.roomrental
             services.AddDbContext<RoomrentalDbContext>(o =>
             o.UseSqlServer(Configuration.GetConnectionString("RoomRentalDatabase")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>(options =>
+            services.AddIdentity<AppUser, IdentityRole>(options =>
             {
                 options.Password.RequireDigit = false;
                 options.Password.RequiredLength = 4;
