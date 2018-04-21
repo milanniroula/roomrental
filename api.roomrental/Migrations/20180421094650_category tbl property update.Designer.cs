@@ -12,9 +12,10 @@ using System;
 namespace api.roomrental.Migrations
 {
     [DbContext(typeof(RoomrentalDbContext))]
-    partial class RoomrentalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180421094650_category tbl property update")]
+    partial class categorytblpropertyupdate
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,18 +26,20 @@ namespace api.roomrental.Migrations
                 {
                     b.Property<int>("CategoryId");
 
-                    b.Property<string>("AdCategoryName");
+                    b.Property<string>("CategoryName");
 
-                    b.Property<string>("NormalisedAdCategoryName");
+                    b.Property<int>("Id");
+
+                    b.Property<string>("NormalisedCategoryName");
 
                     b.HasKey("CategoryId");
 
-                    b.HasIndex("AdCategoryName")
-                        .IsUnique()
-                        .HasFilter("[AdCategoryName] IS NOT NULL");
-
                     b.HasIndex("CategoryId")
                         .IsUnique();
+
+                    b.HasIndex("CategoryName")
+                        .IsUnique()
+                        .HasFilter("[CategoryName] IS NOT NULL");
 
                     b.ToTable("AdCategories");
                 });
@@ -75,20 +78,13 @@ namespace api.roomrental.Migrations
                 {
                     b.Property<int>("AdTypeId");
 
-                    b.Property<string>("AdTypeName")
-                        .IsRequired();
-
                     b.Property<int>("Id");
 
-                    b.Property<string>("NormalisedAdType");
+                    b.Property<string>("Name");
+
+                    b.Property<string>("NormaliseName");
 
                     b.HasKey("AdTypeId");
-
-                    b.HasIndex("AdTypeId")
-                        .IsUnique();
-
-                    b.HasIndex("AdTypeName")
-                        .IsUnique();
 
                     b.ToTable("AdTypes");
                 });

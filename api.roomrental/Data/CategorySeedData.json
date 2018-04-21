@@ -1,0 +1,29 @@
+﻿[
+  {
+    "CategoryId": 100, 
+    "CategoryName": "Real Estate",
+    "NormalisedCategoryName": "REAL ESTATE"
+  },
+  {
+    "CategoryId": 200,
+    "CategoryName": "Auto Mobile",
+    "NormalisedCategoryName": "AUTO MOBILE"
+  },
+  {
+    "CategoryId": 300,
+    "CategoryName": "Education",
+    "NormalisedCategoryName": "EDUCATION"
+  },
+  {
+    "CategoryId": 400,
+    "CategoryName": "Job",
+    "NormalisedCategoryName": "JOB"
+  },
+  {
+    "CategoryId": 500,
+    "CategoryName": "Other",
+    "NormalisedCategoryName": "OTHERS"
+  }
+
+
+]

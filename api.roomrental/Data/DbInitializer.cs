@@ -29,10 +29,10 @@ namespace api.roomrental.Data
         public async Task Seed()
         {
             _context.Database.Migrate();
-            if (_context.Roles.Any() && _context.ApplicationUsers.Any())
-            {
-                return; //DB already seeded
-            }
+            //if (_context.Roles.Any() && _context.ApplicationUsers.Any())
+            //{
+            //    return; //DB already seeded
+            //}
 
             // Check if Role is seeded
 
@@ -75,6 +75,17 @@ namespace api.roomrental.Data
                     }
                 }
             }
+
+            if (!_context.AdCategories.Any())
+            {
+                string filePath = @"Data" + Path.DirectorySeparatorChar + "CategorySeedData.json";
+                var categories = JsonConvert.DeserializeObject<List<AdCategory>>(File.ReadAllText(filePath));
+                _context.AdCategories.AddRange(categories);
+
+            }
+
+            _context.SaveChanges();
         }
+
     }
 }

@@ -12,8 +12,8 @@ using System;
 namespace api.roomrental.Migrations
 {
     [DbContext(typeof(RoomrentalDbContext))]
-    [Migration("20180418103741_test")]
-    partial class test
+    [Migration("20180421082618_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -22,16 +22,98 @@ namespace api.roomrental.Migrations
                 .HasAnnotation("ProductVersion", "2.0.1-rtm-125")
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-            modelBuilder.Entity("api.roomrental.Entities.Demo", b =>
+            modelBuilder.Entity("api.roomrental.Entities.AdPost", b =>
                 {
-                    b.Property<int>("ID")
+                    b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AdTypeId");
+
+                    b.Property<int>("CategoryId");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<DateTime>("ExpireAt");
+
+                    b.Property<DateTime>("ModifiedAt");
+
+                    b.Property<string>("OwnerId");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdTypeId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("AdPost");
+                });
+
+            modelBuilder.Entity("api.roomrental.Entities.AdType", b =>
+                {
+                    b.Property<int>("AdTypeId");
+
+                    b.Property<int>("Id");
 
                     b.Property<string>("Name");
 
-                    b.HasKey("ID");
+                    b.Property<string>("NormaliseName");
 
-                    b.ToTable("Demos");
+                    b.HasKey("AdTypeId");
+
+                    b.ToTable("AdTypes");
+                });
+
+            modelBuilder.Entity("api.roomrental.Entities.Category", b =>
+                {
+                    b.Property<int>("CategoryId");
+
+                    b.Property<string>("CategoryName");
+
+                    b.Property<int>("Id");
+
+                    b.Property<string>("NormaliseCategoryName");
+
+                    b.HasKey("CategoryId");
+
+                    b.ToTable("Categories");
+                });
+
+            modelBuilder.Entity("api.roomrental.Entities.Post", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("AdTypeId");
+
+                    b.Property<int>("CategoryId");
+
+                    b.Property<DateTime>("CreatedAt");
+
+                    b.Property<DateTime>("ExpireAt");
+
+                    b.Property<bool>("Flag");
+
+                    b.Property<bool>("FlagA");
+
+                    b.Property<DateTime>("ModifiedAt");
+
+                    b.Property<string>("OwnerId");
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("AdTypeId");
+
+                    b.HasIndex("CategoryId");
+
+                    b.HasIndex("OwnerId");
+
+                    b.ToTable("Post");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole", b =>
@@ -209,6 +291,40 @@ namespace api.roomrental.Migrations
                     b.ToTable("AppUser");
 
                     b.HasDiscriminator().HasValue("AppUser");
+                });
+
+            modelBuilder.Entity("api.roomrental.Entities.AdPost", b =>
+                {
+                    b.HasOne("api.roomrental.Entities.AdType", "AdType")
+                        .WithMany()
+                        .HasForeignKey("AdTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("api.roomrental.Entities.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("api.roomrental.Entities.AppUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
+                });
+
+            modelBuilder.Entity("api.roomrental.Entities.Post", b =>
+                {
+                    b.HasOne("api.roomrental.Entities.AdType", "AdType")
+                        .WithMany()
+                        .HasForeignKey("AdTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("api.roomrental.Entities.Category", "Category")
+                        .WithMany()
+                        .HasForeignKey("CategoryId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("api.roomrental.Entities.AppUser", "Owner")
+                        .WithMany()
+                        .HasForeignKey("OwnerId");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRoleClaim<string>", b =>

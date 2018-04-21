@@ -10,6 +10,20 @@ namespace api.roomrental.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "AdTypes",
+                columns: table => new
+                {
+                    AdTypeId = table.Column<int>(nullable: false),
+                    Id = table.Column<int>(nullable: false),
+                    Name = table.Column<string>(nullable: true),
+                    NormaliseName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AdTypes", x => x.AdTypeId);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "AspNetRoles",
                 columns: table => new
                 {
@@ -49,6 +63,20 @@ namespace api.roomrental.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_AspNetUsers", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Categories",
+                columns: table => new
+                {
+                    CategoryId = table.Column<int>(nullable: false),
+                    CategoryName = table.Column<string>(nullable: true),
+                    Id = table.Column<int>(nullable: false),
+                    NormaliseCategoryName = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Categories", x => x.CategoryId);
                 });
 
             migrationBuilder.CreateTable(
@@ -157,6 +185,97 @@ namespace api.roomrental.Migrations
                         onDelete: ReferentialAction.Cascade);
                 });
 
+            migrationBuilder.CreateTable(
+                name: "AdPost",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    AdTypeId = table.Column<int>(nullable: false),
+                    CategoryId = table.Column<int>(nullable: false),
+                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    ExpireAt = table.Column<DateTime>(nullable: false),
+                    ModifiedAt = table.Column<DateTime>(nullable: false),
+                    OwnerId = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_AdPost", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_AdPost_AdTypes_AdTypeId",
+                        column: x => x.AdTypeId,
+                        principalTable: "AdTypes",
+                        principalColumn: "AdTypeId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AdPost_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "CategoryId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_AdPost_AspNetUsers_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Post",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn),
+                    AdTypeId = table.Column<int>(nullable: false),
+                    CategoryId = table.Column<int>(nullable: false),
+                    CreatedAt = table.Column<DateTime>(nullable: false),
+                    ExpireAt = table.Column<DateTime>(nullable: false),
+                    Flag = table.Column<bool>(nullable: false),
+                    FlagA = table.Column<bool>(nullable: false),
+                    ModifiedAt = table.Column<DateTime>(nullable: false),
+                    OwnerId = table.Column<string>(nullable: true),
+                    Title = table.Column<string>(nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Post", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Post_AdTypes_AdTypeId",
+                        column: x => x.AdTypeId,
+                        principalTable: "AdTypes",
+                        principalColumn: "AdTypeId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Post_Categories_CategoryId",
+                        column: x => x.CategoryId,
+                        principalTable: "Categories",
+                        principalColumn: "CategoryId",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Post_AspNetUsers_OwnerId",
+                        column: x => x.OwnerId,
+                        principalTable: "AspNetUsers",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Restrict);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AdPost_AdTypeId",
+                table: "AdPost",
+                column: "AdTypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AdPost_CategoryId",
+                table: "AdPost",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_AdPost_OwnerId",
+                table: "AdPost",
+                column: "OwnerId");
+
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",
                 table: "AspNetRoleClaims",
@@ -195,10 +314,28 @@ namespace api.roomrental.Migrations
                 column: "NormalizedUserName",
                 unique: true,
                 filter: "[NormalizedUserName] IS NOT NULL");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Post_AdTypeId",
+                table: "Post",
+                column: "AdTypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Post_CategoryId",
+                table: "Post",
+                column: "CategoryId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Post_OwnerId",
+                table: "Post",
+                column: "OwnerId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "AdPost");
+
             migrationBuilder.DropTable(
                 name: "AspNetRoleClaims");
 
@@ -215,7 +352,16 @@ namespace api.roomrental.Migrations
                 name: "AspNetUserTokens");
 
             migrationBuilder.DropTable(
+                name: "Post");
+
+            migrationBuilder.DropTable(
                 name: "AspNetRoles");
+
+            migrationBuilder.DropTable(
+                name: "AdTypes");
+
+            migrationBuilder.DropTable(
+                name: "Categories");
 
             migrationBuilder.DropTable(
                 name: "AspNetUsers");

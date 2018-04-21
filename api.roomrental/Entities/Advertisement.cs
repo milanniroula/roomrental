@@ -5,10 +5,9 @@ using System.Threading.Tasks;
 
 namespace api.roomrental.Entities
 {
-    public class Demo
+    public class Advertisement
     {
-        public int ID { get; set; }
-        public string Name { get; set; }
+
 
     }
 }
