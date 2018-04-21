@@ -1,12 +1,12 @@
 ﻿[
   {
     "AdTypeId": "1",
-    "AdTypeName": "Buy",
-    "NormalisedAdTypeName": "BUY"
+    "TypeName": "Buy",
+    "NormalisedTypeName": "BUY"
   },
   {
     "AdTypeId": "2",
-    "AdTypeName": "Offer",
-    "NormalisedAdTypeName": "OFFER"
+    "TypeName": "Offer",
+    "NormalisedTypeName": "OFFER"
   }
 ]

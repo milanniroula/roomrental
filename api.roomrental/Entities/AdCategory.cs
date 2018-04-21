@@ -9,8 +9,9 @@ namespace api.roomrental.Entities
     {
       
         public int CategoryId { get; set; }
-        public string AdCategoryName { get; set; }
-        public string NormalisedAdCategoryName { get; set; }
+        public string CategoryName { get; set; }
+        public string NormalisedCategoryName { get; set; }
+
     
         public virtual ICollection<CategoryAttribute> CategoryAttributes { get; set; }
     }

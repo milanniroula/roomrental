@@ -12,8 +12,8 @@ using System;
 namespace api.roomrental.Migrations
 {
     [DbContext(typeof(RoomrentalDbContext))]
-    [Migration("20180421101905_rename colin AdTypes tbl")]
-    partial class renamecolinAdTypestbl
+    [Migration("20180421110741_rename colmns")]
+    partial class renamecolmns
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -26,18 +26,18 @@ namespace api.roomrental.Migrations
                 {
                     b.Property<int>("CategoryId");
 
-                    b.Property<string>("AdCategoryName");
+                    b.Property<string>("CategoryName");
 
-                    b.Property<string>("NormalisedAdCategoryName");
+                    b.Property<string>("NormalisedCategoryName");
 
                     b.HasKey("CategoryId");
 
-                    b.HasIndex("AdCategoryName")
-                        .IsUnique()
-                        .HasFilter("[AdCategoryName] IS NOT NULL");
-
                     b.HasIndex("CategoryId")
                         .IsUnique();
+
+                    b.HasIndex("CategoryName")
+                        .IsUnique()
+                        .HasFilter("[CategoryName] IS NOT NULL");
 
                     b.ToTable("AdCategories");
                 });
@@ -76,36 +76,38 @@ namespace api.roomrental.Migrations
                 {
                     b.Property<int>("AdTypeId");
 
-                    b.Property<string>("AdTypeName")
-                        .IsRequired();
+                    b.Property<string>("NormalisedTypeName");
 
-                    b.Property<string>("NormalisedAdTypeName");
+                    b.Property<string>("TypeName")
+                        .IsRequired();
 
                     b.HasKey("AdTypeId");
 
                     b.HasIndex("AdTypeId")
                         .IsUnique();
 
-                    b.HasIndex("AdTypeName")
+                    b.HasIndex("TypeName")
                         .IsUnique();
 
                     b.ToTable("AdTypes");
                 });
 
-            modelBuilder.Entity("api.roomrental.Entities.AttributeType", b =>
+            modelBuilder.Entity("api.roomrental.Entities.AttributeValueDataType", b =>
                 {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
+                    b.Property<int>("ValueDataTypeId");
 
-                    b.Property<int>("AttributeTypeId");
+                    b.Property<string>("ValueDataTypeName")
+                        .IsRequired();
 
-                    b.Property<string>("AttributeTypeName");
+                    b.HasKey("ValueDataTypeId");
 
-                    b.Property<string>("NormalisedTypeName");
+                    b.HasIndex("ValueDataTypeId")
+                        .IsUnique();
 
-                    b.HasKey("Id");
+                    b.HasIndex("ValueDataTypeName")
+                        .IsUnique();
 
-                    b.ToTable("AttributeTypes");
+                    b.ToTable("AttributeValueDataTypes");
                 });
 
             modelBuilder.Entity("api.roomrental.Entities.AttributeValueOption", b =>
@@ -128,6 +130,24 @@ namespace api.roomrental.Migrations
                     b.ToTable("AttributeValueOptions");
                 });
 
+            modelBuilder.Entity("api.roomrental.Entities.AttributeValueType", b =>
+                {
+                    b.Property<int>("ValueTypeId");
+
+                    b.Property<string>("ValueTypeName")
+                        .IsRequired();
+
+                    b.HasKey("ValueTypeId");
+
+                    b.HasIndex("ValueTypeId")
+                        .IsUnique();
+
+                    b.HasIndex("ValueTypeName")
+                        .IsUnique();
+
+                    b.ToTable("AttributeValueTypes");
+                });
+
             modelBuilder.Entity("api.roomrental.Entities.CategoryAttribute", b =>
                 {
                     b.Property<int>("Id")
@@ -135,9 +155,7 @@ namespace api.roomrental.Migrations
 
                     b.Property<string>("AttributeLabel");
 
-                    b.Property<int?>("AttributeTypeId");
-
-                    b.Property<int>("AttrubuteTypeId");
+                    b.Property<int>("AttributeValueTypeId");
 
                     b.Property<int>("CategoryAttributeId");
 
@@ -145,7 +163,7 @@ namespace api.roomrental.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AttributeTypeId");
+                    b.HasIndex("AttributeValueTypeId");
 
                     b.HasIndex("CategoryId");
 
@@ -356,9 +374,10 @@ namespace api.roomrental.Migrations
 
             modelBuilder.Entity("api.roomrental.Entities.CategoryAttribute", b =>
                 {
-                    b.HasOne("api.roomrental.Entities.AttributeType", "AttributeType")
+                    b.HasOne("api.roomrental.Entities.AttributeValueType", "AttributeValueType")
                         .WithMany()
-                        .HasForeignKey("AttributeTypeId");
+                        .HasForeignKey("AttributeValueTypeId")
+                        .OnDelete(DeleteBehavior.Cascade);
 
                     b.HasOne("api.roomrental.Entities.AdCategory")
                         .WithMany("CategoryAttributes")

@@ -1,0 +1,20 @@
+﻿[
+  {
+    "ValueDataTypeId": "1",
+    "ValueDataTypeName": "text"
+
+  },
+  {
+    "ValueDataTypeId": "2",
+    "ValueDataTypeName": "number"
+  },
+
+  {
+    "ValueDataTypeId": "3",
+    "ValueDataTypeName": "datetime"
+  },
+  {
+    "ValueDataTypeId": "4",
+    "ValueDataTypeName": "boolean"
+  }
+]

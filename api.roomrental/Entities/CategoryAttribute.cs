@@ -12,17 +12,12 @@ namespace api.roomrental.Entities
         public int CategoryAttributeId { get; set; }
         public int CategoryId { get; set; }
         public string AttributeLabel { get; set; }
-        public int AttrubuteTypeId { get; set; }
-        //public int AttrubuteTypeId { get; set; }
+        public int AttributeValueTypeId { get; set; }
+        
+       
 
 
-
-
-
-        //public int? OptionsId { get; set; }
-
-
-        public virtual AttributeType AttributeType { get; set; }
+        public virtual AttributeValueType AttributeValueType { get; set; }
         public virtual ICollection<AttributeValueOption> Options { get; set; }
         //public virtual AdCategory Category{get; set;}
     }

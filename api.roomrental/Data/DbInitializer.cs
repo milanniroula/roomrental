@@ -94,6 +94,22 @@ namespace api.roomrental.Data
 
             }
 
+            if (!_context.AttributeValueTypes.Any())
+            {
+                string filePath = @"Data" + Path.DirectorySeparatorChar + "AttributeValueTypeSeedData.json";
+                var valueType = JsonConvert.DeserializeObject<List<AttributeValueType>>(File.ReadAllText(filePath));
+                _context.AttributeValueTypes.AddRange(valueType);
+
+            }
+
+            if (!_context.AttributeValueDataTypes.Any())
+            {
+                string filePath = @"Data" + Path.DirectorySeparatorChar + "AttributeValueDataTypeSeedData.json";
+                var dataType = JsonConvert.DeserializeObject<List<AttributeValueDataType>>(File.ReadAllText(filePath));
+                _context.AttributeValueDataTypes.AddRange(dataType);
+
+            }
+
             _context.SaveChanges();
         }
 

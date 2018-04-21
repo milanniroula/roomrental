@@ -3,8 +3,8 @@
     public class AdType
     {
         public int AdTypeId { get; set; }
-        public string AdTypeName { get; set; }
-        public string NormalisedAdTypeName { get; set; }
+        public string TypeName { get; set; }
+        public string NormalisedTypeName { get; set; }
 
 
     }

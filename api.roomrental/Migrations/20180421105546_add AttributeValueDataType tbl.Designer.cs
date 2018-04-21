@@ -12,9 +12,10 @@ using System;
 namespace api.roomrental.Migrations
 {
     [DbContext(typeof(RoomrentalDbContext))]
-    partial class RoomrentalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180421105546_add AttributeValueDataType tbl")]
+    partial class addAttributeValueDataTypetbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -93,17 +94,17 @@ namespace api.roomrental.Migrations
 
             modelBuilder.Entity("api.roomrental.Entities.AttributeValueDataType", b =>
                 {
-                    b.Property<int>("ValueDataTypeId");
+                    b.Property<int>("TypeId");
 
-                    b.Property<string>("ValueDataTypeName")
+                    b.Property<string>("TypeName")
                         .IsRequired();
 
-                    b.HasKey("ValueDataTypeId");
+                    b.HasKey("TypeId");
 
-                    b.HasIndex("ValueDataTypeId")
+                    b.HasIndex("TypeId")
                         .IsUnique();
 
-                    b.HasIndex("ValueDataTypeName")
+                    b.HasIndex("TypeName")
                         .IsUnique();
 
                     b.ToTable("AttributeValueDataTypes");
@@ -131,17 +132,17 @@ namespace api.roomrental.Migrations
 
             modelBuilder.Entity("api.roomrental.Entities.AttributeValueType", b =>
                 {
-                    b.Property<int>("ValueTypeId");
+                    b.Property<int>("TypeId");
 
-                    b.Property<string>("ValueTypeName")
+                    b.Property<string>("TypeName")
                         .IsRequired();
 
-                    b.HasKey("ValueTypeId");
+                    b.HasKey("TypeId");
 
-                    b.HasIndex("ValueTypeId")
+                    b.HasIndex("TypeId")
                         .IsUnique();
 
-                    b.HasIndex("ValueTypeName")
+                    b.HasIndex("TypeName")
                         .IsUnique();
 
                     b.ToTable("AttributeValueTypes");
@@ -154,7 +155,9 @@ namespace api.roomrental.Migrations
 
                     b.Property<string>("AttributeLabel");
 
-                    b.Property<int>("AttributeValueTypeId");
+                    b.Property<int?>("AttributeTypeTypeId");
+
+                    b.Property<int>("AttrubuteTypeId");
 
                     b.Property<int>("CategoryAttributeId");
 
@@ -162,7 +165,7 @@ namespace api.roomrental.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("AttributeValueTypeId");
+                    b.HasIndex("AttributeTypeTypeId");
 
                     b.HasIndex("CategoryId");
 
@@ -373,10 +376,9 @@ namespace api.roomrental.Migrations
 
             modelBuilder.Entity("api.roomrental.Entities.CategoryAttribute", b =>
                 {
-                    b.HasOne("api.roomrental.Entities.AttributeValueType", "AttributeValueType")
+                    b.HasOne("api.roomrental.Entities.AttributeValueType", "AttributeType")
                         .WithMany()
-                        .HasForeignKey("AttributeValueTypeId")
-                        .OnDelete(DeleteBehavior.Cascade);
+                        .HasForeignKey("AttributeTypeTypeId");
 
                     b.HasOne("api.roomrental.Entities.AdCategory")
                         .WithMany("CategoryAttributes")

@@ -21,7 +21,8 @@ namespace api.roomrental.models
         public DbSet<AdCategory> AdCategories { get; set; }
         public DbSet<AdPost> AdPost { get; set; }
         public DbSet<CategoryAttribute> CategoryAttributes { get; set; }
-        public DbSet<AttributeType> AttributeTypes { get; set; }
+        public DbSet<AttributeValueType> AttributeValueTypes { get; set; }
+        public DbSet<AttributeValueDataType> AttributeValueDataTypes { get; set; }
         public DbSet<AttributeValueOption> AttributeValueOptions { get; set; }
 
 
@@ -40,26 +41,42 @@ namespace api.roomrental.models
                 entity.Property(a => a.CategoryId).ValueGeneratedNever();
                 entity.Property(a => a.CategoryId).IsRequired();
                 entity.HasIndex(e => e.CategoryId).IsUnique();
-                entity.HasIndex(e => e.AdCategoryName).IsUnique();
+                entity.HasIndex(e => e.CategoryName).IsUnique();
 
             });
 
 
+            // AdType
             builder.Entity<AdType>(entity =>
             {
                 entity.HasKey(a => a.AdTypeId);
                 entity.Property(a => a.AdTypeId).ValueGeneratedNever();
                 entity.HasIndex(e => e.AdTypeId).IsUnique();
-                entity.Property(a => a.AdTypeName).IsRequired();
-                entity.HasIndex(e => e.AdTypeName).IsUnique();
+                entity.Property(a => a.TypeName).IsRequired();
+                entity.HasIndex(e => e.TypeName).IsUnique();
 
 
             });
 
-            builder.Entity<AttributeType>(entity =>
+            // AttributeValueDataType
+            builder.Entity<AttributeValueDataType>(entity =>
             {
+                entity.HasKey(a => a.ValueDataTypeId);
+                entity.Property(a => a.ValueDataTypeId).ValueGeneratedNever();
+                entity.HasIndex(e => e.ValueDataTypeId).IsUnique();
+                entity.Property(a => a.ValueDataTypeName).IsRequired();
+                entity.HasIndex(e => e.ValueDataTypeName).IsUnique();
 
-                entity.Property(a => a.AttributeTypeId).ValueGeneratedNever();
+            });
+
+            // AttributeValueType
+            builder.Entity<AttributeValueType>(entity =>
+            {
+                entity.HasKey(a => a.ValueTypeId);
+                entity.Property(a => a.ValueTypeId).ValueGeneratedNever();
+                entity.HasIndex(e => e.ValueTypeId).IsUnique();
+                entity.Property(a => a.ValueTypeName).IsRequired();
+                entity.HasIndex(e => e.ValueTypeName).IsUnique();
 
             });
 
@@ -76,7 +93,7 @@ namespace api.roomrental.models
             builder.Entity<CategoryAttribute>(entity =>
             {
                 entity.Property(a => a.CategoryAttributeId).ValueGeneratedNever();
-                entity.HasOne(a => a.AttributeType);
+                entity.HasOne(a => a.AttributeValueType);
                 //entity.HasOne(b => b.Options);
                 //entity.Property(a => a.OptionsId).IsRequired(false);
             });

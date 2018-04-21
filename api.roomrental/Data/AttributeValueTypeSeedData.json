@@ -1,0 +1,12 @@
+﻿[
+  {
+    "ValueTypeId": "1",
+    "ValueTypeName": "input"
+
+  },
+  {
+    "ValueTypeId": "2",
+    "ValueTypeName": "select"
+  }
+
+]
