@@ -12,9 +12,10 @@ using System;
 namespace api.roomrental.Migrations
 {
     [DbContext(typeof(RoomrentalDbContext))]
-    partial class RoomrentalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180421101905_rename colin AdTypes tbl")]
+    partial class renamecolinAdTypestbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

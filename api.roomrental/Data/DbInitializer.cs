@@ -76,6 +76,16 @@ namespace api.roomrental.Data
                 }
             }
 
+
+            if (!_context.AdTypes.Any())
+            {
+                string filePath = @"Data" + Path.DirectorySeparatorChar + "AdTypeSeedData.json";
+                var adTypes = JsonConvert.DeserializeObject<List<AdType>>(File.ReadAllText(filePath));
+                _context.AdTypes.AddRange(adTypes);
+
+            }
+
+
             if (!_context.AdCategories.Any())
             {
                 string filePath = @"Data" + Path.DirectorySeparatorChar + "CategorySeedData.json";

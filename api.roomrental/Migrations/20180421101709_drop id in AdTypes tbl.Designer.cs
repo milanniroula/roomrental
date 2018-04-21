@@ -12,9 +12,10 @@ using System;
 namespace api.roomrental.Migrations
 {
     [DbContext(typeof(RoomrentalDbContext))]
-    partial class RoomrentalDbContextModelSnapshot : ModelSnapshot
+    [Migration("20180421101709_drop id in AdTypes tbl")]
+    partial class dropidinAdTypestbl
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -78,7 +79,7 @@ namespace api.roomrental.Migrations
                     b.Property<string>("AdTypeName")
                         .IsRequired();
 
-                    b.Property<string>("NormalisedAdTypeName");
+                    b.Property<string>("NormalisedAdType");
 
                     b.HasKey("AdTypeId");
 
